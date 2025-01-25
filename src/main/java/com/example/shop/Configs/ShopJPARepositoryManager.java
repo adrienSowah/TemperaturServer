@@ -10,7 +10,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ShopJPARepositoryManager {
-  CustomerInterface customerInterface;
+
+    /**
+     * Customer interface for initializing customer specific objects
+     */
+    CustomerInterface customerInterface;
 
 
     public ShopJPARepositoryManager(CustomerServices customerServices){
