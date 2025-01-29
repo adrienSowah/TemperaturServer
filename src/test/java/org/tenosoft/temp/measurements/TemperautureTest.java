@@ -23,7 +23,7 @@ public class TemperautureTest {
 	@Autowired
 	RoomRepository repository;
 	
-	 
+
 	@Test
 	public void emptyTest() {
 		boolean result = true;
@@ -46,6 +46,7 @@ public class TemperautureTest {
 		assertTrue(room.getId() > 0);
 		
 	}
+
 	//@Test
 	public void testUpdateTemparuture() {
 		//arrange
@@ -59,7 +60,7 @@ public class TemperautureTest {
 		//assertTrue(testResult, "Error occured updating the temperatur");
 		
 	}
-	//@Test
+	@Test
 	public void testGetRoomByName() {
 		//boolean testResult = daoTemperature.getRoomByName("bedroom 1") != null;
 		

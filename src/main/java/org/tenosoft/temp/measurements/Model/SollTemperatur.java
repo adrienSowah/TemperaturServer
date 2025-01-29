@@ -1,38 +1,42 @@
 package org.tenosoft.temp.measurements.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.time.Instant;
 
 @Entity
-public class SollTemperatur {
+public class SollTemperatur implements Serializable {
 	@Id
 	@GeneratedValue
 private long id;
-private long roomId;
+
+
+@OneToOne
+@JoinColumn(name = "room_id", referencedColumnName = "id")
+private Room room;
 @Column(name = "solltemp")
 private double soll;
 @Column(name = "mintemp")
 private double min;
+@JsonIgnore
 public long getId() {
 	return id;
 }
 public void setId(long id) {
 	this.id = id;
 }
-public long getRoomId() {
-	return roomId;
-}
-public void setRoomId(long roomId) {
-	this.roomId = roomId;
-}
+
+@JsonGetter("sollTemp")
 public double getSoll() {
-	return soll;
+	return soll ;
 }
 public void setSoll(double soll) {
 	this.soll = soll;
 }
+@JsonGetter("MinTemp")
 public double getMin() {
 	return min;
 }
@@ -40,5 +44,23 @@ public void setMin(double min) {
 	this.min = min;
 }
 
+/*
+	@Override
+	public String toString() {
+		return "SollTemperatur{" +
+				"id=" + id +
+				", room=" + room +
+				", soll=" + soll +
+				", min=" + min +
+				'}';
+	}
+*/
+	@JsonIgnore
+	public Room getRoom() {
+		return room;
+	}
 
+	public void setRoom(Room room) {
+		this.room = room;
+	}
 }
