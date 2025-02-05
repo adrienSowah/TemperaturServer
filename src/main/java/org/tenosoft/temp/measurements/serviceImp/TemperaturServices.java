@@ -20,7 +20,7 @@ public TemperaturServices(@Qualifier("TemperatureServiceBean") ITemperaturServic
     this.iTemperaturServices = iTemperaturServices;
 }
 
-    public void updateIstTemperature(int roomId, double istTemp) {
+    public void updateIstTemperature(long roomId, double istTemp) {
          iTemperaturServices.updateIstTemperature(roomId,istTemp);
     }
 

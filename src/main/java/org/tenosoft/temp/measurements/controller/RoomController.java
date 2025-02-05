@@ -168,5 +168,6 @@ public ResponseEntity<SollTemperatur> changeSollTempretur(@RequestBody SollTempe
 		return new ResponseEntity<>("Requestbody is incorrect",HttpStatus.BAD_REQUEST);
 	}
 
+
 }
 

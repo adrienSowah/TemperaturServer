@@ -122,7 +122,7 @@ public class  Room implements Serializable {
 				", roomTemperatur=" + roomTemperatur +
 				", sollTemperatur=" + sollTemperatur +
 				", lights=" + lights +
+
 				'}';
 	}
-
-}
+}   

@@ -21,7 +21,7 @@ public class TemperatureServiceJPAImpl implements ITemperaturServices {
     @Autowired
      SollTempRepository sollTempRepository;
     @Override
-    public void updateIstTemperature(int roomId, double istTemp) {
+    public void updateIstTemperature(long roomId, double istTemp) {
 
     }
 

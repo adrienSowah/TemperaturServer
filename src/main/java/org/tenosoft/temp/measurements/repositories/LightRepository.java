@@ -19,6 +19,8 @@ public interface LightRepository extends JpaRepository<Light,Long> {
 	 
 	 List<Light> findByRoomId( long roomid);
 
+	 void saveColor(String color);
+
 
 	 
 }

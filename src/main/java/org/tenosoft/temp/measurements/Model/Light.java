@@ -23,6 +23,9 @@ public class Light implements Serializable   {
 	private Room room;
 	@JsonProperty("state")
 	private int state;
+
+	@JsonProperty("color")
+	private String color;
 	
 	public long getId() {
 		return id;
@@ -38,6 +41,7 @@ public class Light implements Serializable   {
 		this.state = state;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Light{" +
@@ -45,9 +49,9 @@ public class Light implements Serializable   {
 				", lightName='" + lightName + '\'' +
 				", room=" + room +
 				", state=" + state +
+				", color='" + color + '\'' +
 				'}';
 	}
-
 
 	//@JsonBackReference
 	public Room getRoom() {
@@ -64,5 +68,13 @@ public class Light implements Serializable   {
 
 	public void setLightName(String lightName) {
 		this.lightName = lightName;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
 	}
 }

@@ -11,7 +11,7 @@ public interface ITemperaturServices {
 	
 
 	
-	void updateIstTemperature(int roomId, double istTemp);
+	void updateIstTemperature(long roomId, double istTemp);
 	List<RoomTemperatur> getAvailableRoomTemperatur();
 	List<SollTemperatur> getAvailableRoomSollTemperatur();
 

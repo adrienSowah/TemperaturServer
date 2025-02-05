@@ -29,13 +29,13 @@ public class DaoTemperature implements ITemperaturServices {
 	} 
 	
 	@Override
-	public void updateIstTemperature(int roomId, double istTemp)  {
+	public void updateIstTemperature(long roomId, double istTemp)  {
 		boolean updateResut = false;
 		try {
 			Connection con = driverManager.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(JbbcSqlStatements.UPDATE_ROOM);
 			pstmt.setDouble(1, istTemp);
-			pstmt.setInt(2, roomId);  
+			pstmt.setLong(2, roomId);
 			
 			
 			int result = pstmt.executeUpdate();
