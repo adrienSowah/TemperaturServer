@@ -5,6 +5,9 @@ import java.util.Optional;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.tenosoft.temp.measurements.Model.Light;
 import org.tenosoft.temp.measurements.Model.Room;
@@ -19,9 +22,10 @@ public interface LightRepository extends JpaRepository<Light,Long> {
 	 
 	 List<Light> findByRoomId( long roomid);
 
-	 void saveColor(String color);
 
-
+	@Modifying
+	@Query("UPDATE Light l SET l.color = :color WHERE l.id = :id")
+	void updateColor(@Param("id") Long id, @Param("color") String color);
 	 
 }
 

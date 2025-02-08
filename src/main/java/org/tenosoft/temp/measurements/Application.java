@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.tenosoft.temp.measurements.driver.SmartHomeDriverManager;
 
 import java.sql.SQLException;
 
 @SpringBootApplication
+@EnableJpaRepositories(basePackages = "org.tenosoft.temp.measurements.repositories")
 public class Application {
 /*
 	@Value("${db.jdbc.dbName}")

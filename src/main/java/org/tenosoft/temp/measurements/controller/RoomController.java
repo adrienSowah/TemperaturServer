@@ -52,6 +52,10 @@ public class  RoomController {
 		 return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 
+	@GetMapping(path = "/getRoomById/{roomId}")
+	public Room getRoomById(long roomId) {
+		return roomServices.getRoomById(roomId);
+	}
 	@GetMapping(path = "/getallTemp")
 	public ResponseEntity<List<RoomTemperatur>> getAllRoomTempreaturs(){
 
