@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.data.repository.query.QueryByExampleExecutor;
 import org.springframework.stereotype.Repository;
 import org.tenosoft.temp.measurements.Model.Light;
 import org.tenosoft.temp.measurements.Model.Room;
@@ -16,11 +17,11 @@ import org.tenosoft.temp.measurements.Model.Room;
 		value="temp.mes.resource.source",
 		havingValue = "jpa",
 		matchIfMissing = false)
-public interface LightRepository extends JpaRepository<Light,Long> {
+public interface LightRepository extends JpaRepository<Light,Long>, QueryByExampleExecutor<Light> {
 		
-	 List<Light> findByState(int state);
+	 List<Light> findByState(Integer state);
 	 
-	 List<Light> findByRoomId( long roomid);
+	 List<Light> findByRoomId( Long roomid);
 
 
 	@Modifying

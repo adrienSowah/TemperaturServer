@@ -11,7 +11,7 @@ import java.time.Instant;
 public class SollTemperatur implements Serializable {
 	@Id
 	@GeneratedValue
-private long id;
+private Long id;
 
 
 @OneToOne
@@ -22,10 +22,10 @@ private double soll;
 @Column(name = "mintemp")
 private double min;
 @JsonIgnore
-public long getId() {
+public Long getId() {
 	return id;
 }
-public void setId(long id) {
+public void setId(Long id) {
 	this.id = id;
 }
 

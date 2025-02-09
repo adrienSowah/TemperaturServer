@@ -67,6 +67,11 @@ public class DaoRoom implements IRoomService {
     }
 
     @Override
+    public Room getRoomByExample(Room exampleRoom) {
+        return null;
+    }
+
+    @Override
     public Room getRoomByName(String name) {
         // TODO Auto-generated method stub
         Room room = new Room();

@@ -2,6 +2,7 @@ package org.tenosoft.temp.measurements.repositories;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.Example;
 import org.tenosoft.temp.measurements.Model.*;
 import org.tenosoft.temp.measurements.controller.RoomData;
 import org.tenosoft.temp.measurements.interfaces.IRoomService;
@@ -30,8 +31,22 @@ public class RoomServiceJPAImpl implements IRoomService{
     @Override
     public List<Room>  getAvailableRooms() {
 
+
        return roomRepository.findAll();
 
+    }
+
+    @Override
+    public Room getRoomByExample(Room exampleRoom) {
+        Room result = null;
+         Example<Room> roomExample = Example.of(exampleRoom);
+
+        Optional<Room>  optionalRoom = roomRepository.findOne(roomExample);
+        if (optionalRoom.isPresent()) {
+            result = optionalRoom.get();
+
+        }
+        return result;
     }
 
     @Override

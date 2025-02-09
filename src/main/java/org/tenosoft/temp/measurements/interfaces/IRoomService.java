@@ -29,4 +29,6 @@ public interface IRoomService {
 
 	List<Room> getAvailableRooms();
 
+	Room getRoomByExample(Room exampleRoom);
+
 }

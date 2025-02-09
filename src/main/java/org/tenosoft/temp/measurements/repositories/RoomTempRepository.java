@@ -17,4 +17,6 @@ public interface RoomTempRepository extends JpaRepository<RoomTemperatur, Long>{
 
 	List<RoomTemperatur> findByIstTemp(double istTemp);
 	List<RoomTemperatur> findByTime(Date time);
+
+
 }

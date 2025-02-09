@@ -128,4 +128,10 @@ public RoomData getAllInfo(long roomId) {
 public void deleteRoomByName(String name){
        iRoomService.getRoomByName(name);
 }
+
+    public  Room getRoomByExample(Room exampleRoom) {
+        return  iRoomService.getRoomByExample(exampleRoom);
+    }
 }
+
+

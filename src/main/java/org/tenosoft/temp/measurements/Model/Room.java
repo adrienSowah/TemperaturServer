@@ -26,13 +26,13 @@ public class  Room implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name = "Id")
-	private long id;
+	private Long id;
 //@JsonProperty("name")
 	private String name;
 
 @JsonProperty("floorid")
 	@Column(name="floorid")
-	private long floorId;
+	private Long floorId;
 
 @JsonProperty("description")
 	private String description;
@@ -51,10 +51,10 @@ public class  Room implements Serializable {
 
 
 	@JsonIgnore
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -66,10 +66,10 @@ public class  Room implements Serializable {
 		this.name = name;
 	}
 	@JsonIgnore
-	public long getFloorId() {
+	public Long getFloorId() {
 		return floorId;
 	}
-	public void setFloorId(long floorId) {
+	public void setFloorId(Long floorId) {
 		this.floorId = floorId;
 	}
 

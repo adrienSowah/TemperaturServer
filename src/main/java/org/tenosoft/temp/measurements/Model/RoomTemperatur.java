@@ -15,7 +15,7 @@ public class RoomTemperatur implements Serializable {
 	
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 
 
 	@OneToOne
@@ -29,15 +29,15 @@ public class RoomTemperatur implements Serializable {
 	public RoomTemperatur() {
 		
 	}
-	public RoomTemperatur(long id,double istTemp) {
+	public RoomTemperatur(Long id,double istTemp) {
 		this.id = id;
 		this.istTemp = istTemp;
 	}
 	@JsonIgnore
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

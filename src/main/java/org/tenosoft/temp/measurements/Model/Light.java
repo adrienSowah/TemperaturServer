@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Light implements Serializable   {
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 
 	@JsonProperty("lightName")
     private String lightName;
@@ -22,22 +22,22 @@ public class Light implements Serializable   {
 	@JoinColumn(name = "room_id")
 	private Room room;
 	@JsonProperty("state")
-	private int state;
+	private Integer state;
 
 	@JsonProperty("color")
 	private String color;
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public int getState() {
+	public Integer getState() {
 		return state;
 	}
-	public void setState(int state) {
+	public void setState(Integer state) {
 		this.state = state;
 	}
 
